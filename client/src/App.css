@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App_Banner {
+  position: relative;
+  width: 100%;
+  z-index: -1;
+}
+
+.PageOne_img {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.App_Header_matinText {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  z-index: 10;
+}

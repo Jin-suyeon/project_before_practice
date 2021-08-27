@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.Login {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  top: 0px;
+  right: 0px;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Login_in {
+  width: 370px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: white;
+  padding: 30px;
+}
+
+.Login_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Login_page_main_text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: rgb(121, 121, 121);
+  font-family: "Allison";
+}
+
+.Login_line {
+  width: 100%;
+  border-top: 1px solid rgb(189, 189, 189);
+}
+
+.Login_input {
+  margin-top: 15px;
+  width: 100%;
+  height: 35px;
+  padding-left: 12px;
+  border-radius: 20px;
+  border: 1px solid rgb(189, 189, 189);
+  outline: none;
+}
+
+.Login_input:focus {
+  box-shadow: 0 0 0 2px rgb(135, 165, 135);
+  border: 1px solid rgba(189, 189, 189, 0);
+}
+
+.Login_checkbox_container {
+  margin-top: 10px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Login_checkbox_in {
+  display: flex;
+  align-items: center;
+}
+
+/*! 기본 체크박스 변경 */
+input[type="checkbox"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  height: 14px;
+  width: 14px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 3px;
+}
+
+input[type="checkbox"]:checked {
+  background: rgb(135, 165, 135);
+}
+
+input[type="checkbox"]:after {
+  content: "";
+  position: relative;
+  left: 40%;
+  top: 20%;
+  width: 15%;
+  height: 40%;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+input[type="checkbox"]:checked:after {
+  display: block;
+}
+/*! 기본 체크박스 변경 */
+
+.Login_ckeckbox {
+  margin-left: 5px;
+  font-size: 13px;
+  color: black;
+}
+
+.Login_password_forgot {
+  font-size: 13px;
+  color: brown;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button {
+  margin-top: 30px;
+  width: 100%;
+  height: 35px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: rgb(135, 165, 135);
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+.Login_sign_up {
+  margin-top: 190px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.Login_sign_up_in {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.Login_sign_up_text {
+  font-size: 13px;
+  color: black;
+}
+
+.Login_sign_up_button {
+  font-size: 13px;
+  color: brown;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* input.dry[type="checkbox"] {
+  filter: hue-rotate(-0.12turn) saturate(2);
+} */

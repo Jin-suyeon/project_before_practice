@@ -1,0 +1,113 @@
+/* @font-face {
+  font-family: "YeolrinMyeongjo-Light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinMyeongjo-Light.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.Header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.Header_in {
+  display: flex;
+  width: 100%;
+  padding: 20px 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header_logo {
+  margin-top: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Allison";
+}
+
+.Header_logo > span {
+  font-size: 22px;
+  font-weight: 800;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+}
+
+.Header_menu {
+  font-size: 15px;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.Header_menu > span {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+}
+
+.Header_login {
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.Header_login_in {
+  cursor: pointer;
+  margin: 0px 5px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.Header_login_in:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.Header_menu > span:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.Header_line {
+  width: 96%;
+  border-top: 1px solid white;
+}
+
+@media screen and (max-width: 750px) {
+  .Header_in {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .Header_login {
+    display: none;
+  }
+
+  .Header_logo {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .Header_menu > span:hover {
+    background-color: rgba(245, 222, 179, 0);
+    color: black;
+  }
+}
