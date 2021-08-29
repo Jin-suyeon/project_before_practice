@@ -1,0 +1,58 @@
+.Chair {
+  width: 100%;
+  display: flex;
+  padding: 50px 40px;
+  margin-top: 20px;
+}
+
+.Chair_in {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.Chair_list {
+  width: 100%;
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.Chair_img {
+  width: 300px;
+  height: 200px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.Chair_list_explanation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Chair_list_title {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.Chair_list_price {
+  margin-bottom: 20px;
+}
+
+.Chair_list_cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(206, 206, 206);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+}
+
+.Chair_list_cart:active {
+  transform: scale(0.98);
+}
