@@ -12,8 +12,9 @@
   padding: 0;
 }
 
-.Header_change {
+#Header {
   position: fixed;
+  z-index: 500;
   top: 0;
   display: flex;
   flex-direction: column;
@@ -21,31 +22,34 @@
   align-items: center;
   width: 100%;
   height: 70px;
-  color: rgb(135, 165, 135);
-  background-color: white;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(233, 233, 233);
 }
 
-.Header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 70px;
-  background-color: rgba(255, 255, 255, 0.534);
-}
-
-.Header_in {
+#Header_in {
   display: flex;
   width: 100%;
-  padding: 20px 30px;
+  padding: 20px 40px;
   justify-content: space-between;
   align-items: center;
 }
 
+#Header_fst {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .Header_logo_link {
-  color: rgb(135, 165, 135);
+  color: rgb(0, 0, 0);
   text-decoration: none;
+}
+
+#Header_logo_icon {
+  font-weight: 900;
+  color: rgb(135, 165, 135);
+  margin-left: 30px;
+  font-size: 20px;
 }
 
 .Header_menu_link {
@@ -56,54 +60,32 @@
   color: rgb(0, 0, 0);
 }
 
-.Header_logo {
+/* .Header_logo {
   margin-top: 4px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Allison";
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 800;
-  color: rgb(135, 165, 135);
-}
-
-.Header_logo_change {
-  margin-top: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Allison";
-  font-size: 22px;
-  font-weight: 800;
-  color: rgb(135, 165, 135);
-}
+  color: rgb(0, 0, 0);
+} */
 
 .Header_menu {
   font-size: 15px;
-  width: 30%;
   display: flex;
   justify-content: space-between;
-  font-weight: 500;
-}
-
-.Header_menu_change {
-  font-size: 15px;
-  width: 30%;
-  display: flex;
-  justify-content: space-between;
-  font-weight: 500;
-}
-
-/* .Header_menu > span {
-  display: flex;
   align-items: center;
-  justify-self: center;
+  flex-direction: column;
+  font-weight: 500;
+  background-color: wheat;
+}
+
+#Header_menu_bar:hover {
+  color: rgb(135, 165, 135);
   cursor: pointer;
-  padding: 5px 15px;
-  border-radius: 5px;
-} */
+}
 
 .Header_menu_link > span {
   display: flex;
@@ -112,56 +94,116 @@
   cursor: pointer;
   padding: 5px 15px;
   border-radius: 5px;
-  color: rgb(135, 165, 135);
+  font-weight: 300;
+  color: rgb(0, 0, 0);
 }
 
-.Header_menu_change > span {
+.Header_login_mypage {
   display: flex;
   align-items: center;
-  justify-self: center;
-  cursor: pointer;
-  padding: 5px 15px;
-  border-radius: 5px;
 }
 
 .Header_login {
   display: flex;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgb(135, 165, 135);
+  align-items: center;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
 }
 
 .Header_login_in {
+  display: flex;
+  align-items: center;
   cursor: pointer;
-  margin: 0px 5px;
-  padding: 5px 15px;
   border-radius: 5px;
   text-decoration: none;
 }
 
-.Header_login_in_change {
+.Header_login_in_page {
+  display: flex;
+  align-items: center;
   cursor: pointer;
-  margin: 0px 5px;
-  padding: 5px 15px;
   border-radius: 5px;
   text-decoration: none;
+  font-size: 14px;
+  color: rgb(196, 196, 196);
+  font-weight: 600;
+}
+
+.Header_login_in_page:hover {
   color: rgb(135, 165, 135);
 }
 
-.Header_login_in:hover {
-  background-color: rgba(135, 165, 135, 0.295);
+.Header_login_in > span {
+  display: flex;
+  align-items: center;
 }
 
-.Header_login_in_change:hover {
-  background-color: rgba(135, 165, 135, 0.11);
+.user {
+  margin-right: 30px;
+  font-size: 25px;
+}
+
+.cart {
+  font-size: 22px;
+}
+
+#Header_input {
+  display: flex;
+  width: 50px;
+  height: 25px;
+  border-radius: 15px;
+  border: 2px solid rgb(196, 196, 196);
+  outline: none;
+  padding-left: 12px;
+  margin-right: 30px;
+  transition: width 1s, height 1s, background-color 1s, transform 2s;
+}
+
+#Header_input_icon {
+  position: absolute;
+  top: 27px;
+  right: 150px;
+  color: rgb(196, 196, 196);
+  font-size: 14px;
+}
+
+#Header_input:focus {
+  box-shadow: 0 0 0 2px rgb(135, 165, 135);
+  border: 2px solid rgba(189, 189, 189, 0);
+  width: 300px;
+}
+
+.Header_icon {
+  color: rgb(196, 196, 196);
+}
+
+.Header_icon:hover {
+  color: rgb(135, 165, 135);
+}
+
+#Header_input_icon:hover {
+  color: rgb(135, 165, 135);
+}
+
+#Header_cart_length {
+  position: absolute;
+  top: 38px;
+  right: 30px;
+  background: rgb(170, 192, 170);
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  line-height: 20px;
+  align-items: center;
+  color: white;
+  margin-left: 5px;
+  font-size: 12px;
 }
 
 .Header_menu_link > span:hover {
   background-color: rgba(135, 165, 135, 0.295);
-}
-
-.Header_menu_change > span:hover {
-  background-color: rgba(135, 165, 135, 0.11);
 }
 
 .Header_line {
@@ -169,41 +211,36 @@
   border-top: 1px solid white;
 }
 
-@media screen and (max-width: 750px) {
-  .Header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 80px;
-    color: white;
-    background-color: rgba(255, 255, 255, 0.2);
-  }
+#Header_menu:hover #Submenu {
+  display: block;
+}
 
-  .Header_in {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+#Submenu {
+  position: absolute;
+  left: 0;
+  padding-top: 26px;
+  display: none;
+  text-transform: none;
+  width: 200px;
+}
 
-  .Header_login {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-  }
+#Submenu_in {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.26);
+}
 
-  .Header_login_in > span:hover {
-    color: rgb(135, 165, 135);
-    background-color: rgba(245, 222, 179, 0);
-    text-shadow: rgba(255, 255, 255, 0.212);
-  }
+.SubMenu_link {
+  padding: 20px;
+}
 
-  .Header_logo {
-    margin-left: 15px;
-  }
+.SubMenu_link:hover {
+  background-color: rgb(170, 192, 170);
+}
 
-  .Header_menu > span:hover {
-    background-color: rgba(245, 222, 179, 0);
-    color: rgb(135, 165, 135);
-  }
+.SubMenu_text {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  padding-left: 20px;
 }

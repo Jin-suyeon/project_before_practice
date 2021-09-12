@@ -1,0 +1,137 @@
+.cartIn_container {
+  margin: 180px 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.cartIn {
+  /* width: 80%; */
+  min-width: 1000px;
+}
+
+.cartIn_items {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.cartIn_items > thead {
+  background-color: rgb(244, 244, 244);
+}
+
+.cartIn_items > thead > td {
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: gray;
+}
+
+.cartIn_items > thead > td:nth-child(6) {
+  display: none;
+}
+
+.cartIn_items tbody {
+  font-size: 13px;
+}
+
+.cartIn_items tbody td:nth-child(2) {
+  text-align: left;
+  padding-left: 20px;
+  font-weight: 500;
+}
+
+.cartIn_items tbody td:nth-child(6) {
+  border: none;
+}
+
+.cartIn_items tbody td {
+  border: 1px solid rgb(244, 244, 244);
+}
+
+.cartIn_items_img > img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 20px 0;
+}
+
+.cartIn_items button {
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+.cartIn_items button:hover {
+  background-color: var(--green--color);
+  color: white;
+}
+
+.cartIn_items button:active {
+  background-color: var(--green--color);
+  transform: scale(0.98);
+}
+
+td {
+  position: relative;
+}
+
+.cartIn_delete {
+  background-color: rgb(244, 244, 244);
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.cartIn_total_price {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cartIn_total_price div {
+  margin-right: 60px;
+  padding: 0 20px 10px 100px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cartIn_total_price span {
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 30px;
+}
+
+.cartIn_buy_button {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cartIn_buy_button button {
+  padding: 15px 90px;
+  margin-right: 60px;
+  border-radius: 30px;
+  border: none;
+  background-color: var(--green--color);
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.cartIn_buy_button button:active {
+  transform: scale(0.98);
+}

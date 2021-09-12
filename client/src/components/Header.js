@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../styles/Header.css";
 import Login from "./Login";
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
-import Chair from "./Chair";
+import { Link } from "react-router-dom";
 
-function Header({ clickMenu, clickMenuHome }) {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
+import SubMenu from "../pages/SubMenu";
+
+function Header({ setMydata, cartList }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [isLogin, setIsLogin] = useState(false);
+  const [accessToken, setAccessToken] = useState("");
 
   const openHandler = () => {
     setIsOpen(!isOpen);
@@ -23,86 +28,72 @@ function Header({ clickMenu, clickMenuHome }) {
     }
   };
 
-  //! header 변경 함수
-  //! window.scrollY : 문서가 수직으로 얼마나 스크롤 됐는지 픽셀 단위로 반환한다
-  //! document.documentElement.scrollTop : y축 방향으로 스크롤한 거리
-  const updateScroll = () => {
-    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", updateScroll);
-  });
+  const totalQuantity = cartList
+    .map((product) => product.quantity)
+    .reduce((a, b) => a + b, 0);
 
   return (
-    <BrowserRouter>
-      <div className={scrollPosition > 70 ? "Header_change" : "Header"}>
-        <div className="Header_in">
-          <Link className="Header_logo_link" style={{ textDecoration: "none" }}>
-            <div
-              className={
-                scrollPosition > 70 ? "Header_logo_change" : "Header_logo"
-              }
-            >
-              <Link onClick={clickMenuHome} className="Header_logo_link" to="/">
-                <span>HOMEINT</span>
+    <div id="Header">
+      <div id="Header_in">
+        <div id="Header_fst">
+          <div id="Header_menu">
+            <FontAwesomeIcon id="Header_menu_bar" icon={faBars} />
+            <SubMenu />
+          </div>
+          <Link className="Header_logo_link" to="/">
+            <span id="Header_logo_icon">HOMEINT</span>
+          </Link>
+        </div>
+
+        <div className="Header_login">
+          {/* <div className="Header_login_in">
+            <span>
+              <span id="Header_search">
+                <input id="Header_input" type="text"></input>
+                <FontAwesomeIcon id="Header_input_icon" icon={faSearch} />
+              </span>
+            </span>
+          </div> */}
+          <div className="Header_login_mypage">
+            {isLogin ? (
+              <Link to="/mypage" className="Header_login_in user">
+                <span>
+                  <FontAwesomeIcon
+                    className="Header_icon"
+                    icon={faUserCircle}
+                  />
+                </span>
+              </Link>
+            ) : (
+              <div className="Header_login_in_page" onClick={openHandler}>
+                <span className="">Login</span>
+              </div>
+            )}
+          </div>
+          {isLogin ? (
+            <div className="Header_login_in">
+              <Link to="/cart">
+                <FontAwesomeIcon
+                  className="Header_icon cart"
+                  icon={faShoppingBag}
+                />
+                <span id="Header_cart_length">{totalQuantity}</span>
               </Link>
             </div>
-          </Link>
-          <div
-            className={
-              scrollPosition > 70 ? "Header_menu_change" : "Header_menu"
-            }
-          >
-            <Link className="Header_menu_link" to="/chair">
-              <span onClick={clickMenu}>chair</span>
-            </Link>
-            <Link className="Header_menu_link">
-              <span onClick={clickMenu}>desk</span>
-            </Link>
-            <Link className="Header_menu_link">
-              <span onClick={clickMenu}>shelf</span>
-            </Link>
-            <Link className="Header_menu_link">
-              <span onClick={clickMenu}>light</span>
-            </Link>
-          </div>
-          <div className="Header_login">
-            <div
-              className={
-                scrollPosition > 70
-                  ? "Header_login_in_change"
-                  : "Header_login_in"
-              }
-              onClick={openHandler}
-            >
-              <span>Login</span>
-            </div>
-            <div
-              className={
-                scrollPosition > 70
-                  ? "Header_login_in_change"
-                  : "Header_login_in"
-              }
-            >
-              <span>Cart</span>
-            </div>
-          </div>
+          ) : null}
         </div>
-        {isOpen ? (
-          <Login
-            scrollStop={scrollStop}
-            setIsOpen={setIsOpen}
-            isOpen={isOpen}
-          />
-        ) : null}
       </div>
-      <Switch>
-        <Route exact path="/chair">
-          <Chair />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+      {isOpen ? (
+        <Login
+          setMydata={setMydata}
+          setIsLogin={setIsLogin}
+          scrollStop={scrollStop}
+          setIsOpen={setIsOpen}
+          isOpen={isOpen}
+          setAccessToken={setAccessToken}
+        />
+      ) : null}
+    </div>
   );
 }
 

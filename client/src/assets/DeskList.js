@@ -1,4 +1,4 @@
-const ChairList = [
+const DeskList = [
   {
     id: 1,
     img: "https://www.ulcdn.net/images/products/302120/slide/1998x1089/Meryl_Lounge_Chair_Teal_3.jpg?1603176355",
@@ -55,4 +55,4 @@ const ChairList = [
   },
 ];
 
-export default ChairList;
+export default DeskList;

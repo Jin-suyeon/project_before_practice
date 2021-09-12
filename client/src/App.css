@@ -4,22 +4,16 @@
   padding: 0;
 }
 
-.App_Banner {
-  position: relative;
-  width: 100%;
-  z-index: -1;
+body {
+  min-width: 400px;
 }
 
-.PageOne_img {
-  width: 100%;
-  height: 800px;
-  object-fit: cover;
-  object-position: center;
+:root {
+  --ee--ee--ee: white;
+  --green--color: rgb(135, 165, 135);
 }
 
-.App_Header_matinText {
-  position: absolute;
-  width: 100%;
-  top: 0px;
-  z-index: 10;
+a {
+  text-decoration: none;
+  color: var(--ee--ee--ee);
 }

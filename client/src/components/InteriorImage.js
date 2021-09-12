@@ -8,7 +8,7 @@ function InteriorImage() {
         <div className="InteriorImage_main_text">Interior Image</div>
         <div className="InteriorImage_img_container">
           <span className="InteriorImage_img">
-            <img src="/2.jpg" alt="" />
+            <img src="/2.jpg" alt=""></img>
           </span>
           <span className="InteriorImage_img">
             <img src="/3.jpg" alt="" />
