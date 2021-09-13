@@ -113,7 +113,7 @@
 
 #Loading {
   position: absolute;
-  z-index: 100;
+  z-index: 500;
   display: flex;
   justify-content: center;
   align-items: center;

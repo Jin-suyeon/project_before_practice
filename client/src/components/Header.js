@@ -4,13 +4,12 @@ import Login from "./Login";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
-import SubMenu from "../pages/SubMenu";
 
-function Header({ setMydata, cartList }) {
+function Header({ setMydata, cartList, isLogin, setIsLogin }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+
   const [accessToken, setAccessToken] = useState("");
 
   const openHandler = () => {
@@ -36,24 +35,19 @@ function Header({ setMydata, cartList }) {
     <div id="Header">
       <div id="Header_in">
         <div id="Header_fst">
-          <div id="Header_menu">
-            <FontAwesomeIcon id="Header_menu_bar" icon={faBars} />
-            <SubMenu />
-          </div>
           <Link className="Header_logo_link" to="/">
             <span id="Header_logo_icon">HOMEINT</span>
           </Link>
         </div>
 
+        <div className="Header_menu">
+          <Link to="/chair">chair</Link>
+          <Link to="/desk">desk</Link>
+          <Link to="shelf">shelf</Link>
+          <Link to="light">light</Link>
+        </div>
+
         <div className="Header_login">
-          {/* <div className="Header_login_in">
-            <span>
-              <span id="Header_search">
-                <input id="Header_input" type="text"></input>
-                <FontAwesomeIcon id="Header_input_icon" icon={faSearch} />
-              </span>
-            </span>
-          </div> */}
           <div className="Header_login_mypage">
             {isLogin ? (
               <Link to="/mypage" className="Header_login_in user">

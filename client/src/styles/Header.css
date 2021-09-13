@@ -14,7 +14,7 @@
 
 #Header {
   position: fixed;
-  z-index: 500;
+  z-index: 100;
   top: 0;
   display: flex;
   flex-direction: column;
@@ -48,54 +48,27 @@
 #Header_logo_icon {
   font-weight: 900;
   color: rgb(135, 165, 135);
-  margin-left: 30px;
   font-size: 20px;
 }
-
-.Header_menu_link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-}
-
-/* .Header_logo {
-  margin-top: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Allison";
-  font-size: 24px;
-  font-weight: 800;
-  color: rgb(0, 0, 0);
-} */
 
 .Header_menu {
   font-size: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: column;
   font-weight: 500;
-  background-color: wheat;
 }
 
-#Header_menu_bar:hover {
-  color: rgb(135, 165, 135);
-  cursor: pointer;
-}
-
-.Header_menu_link > span {
-  display: flex;
-  align-items: center;
-  justify-self: center;
-  cursor: pointer;
+.Header_menu a {
+  color: var(--green--color);
   padding: 5px 15px;
   border-radius: 5px;
-  font-weight: 300;
-  color: rgb(0, 0, 0);
+  margin: 0 20px;
+}
+
+.Header_menu a:hover {
+  background-color: var(--green--color);
+  color: white;
 }
 
 .Header_login_mypage {
@@ -147,41 +120,11 @@
   font-size: 22px;
 }
 
-#Header_input {
-  display: flex;
-  width: 50px;
-  height: 25px;
-  border-radius: 15px;
-  border: 2px solid rgb(196, 196, 196);
-  outline: none;
-  padding-left: 12px;
-  margin-right: 30px;
-  transition: width 1s, height 1s, background-color 1s, transform 2s;
-}
-
-#Header_input_icon {
-  position: absolute;
-  top: 27px;
-  right: 150px;
-  color: rgb(196, 196, 196);
-  font-size: 14px;
-}
-
-#Header_input:focus {
-  box-shadow: 0 0 0 2px rgb(135, 165, 135);
-  border: 2px solid rgba(189, 189, 189, 0);
-  width: 300px;
-}
-
 .Header_icon {
   color: rgb(196, 196, 196);
 }
 
 .Header_icon:hover {
-  color: rgb(135, 165, 135);
-}
-
-#Header_input_icon:hover {
   color: rgb(135, 165, 135);
 }
 
@@ -200,47 +143,4 @@
   color: white;
   margin-left: 5px;
   font-size: 12px;
-}
-
-.Header_menu_link > span:hover {
-  background-color: rgba(135, 165, 135, 0.295);
-}
-
-.Header_line {
-  width: 96%;
-  border-top: 1px solid white;
-}
-
-#Header_menu:hover #Submenu {
-  display: block;
-}
-
-#Submenu {
-  position: absolute;
-  left: 0;
-  padding-top: 26px;
-  display: none;
-  text-transform: none;
-  width: 200px;
-}
-
-#Submenu_in {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.26);
-}
-
-.SubMenu_link {
-  padding: 20px;
-}
-
-.SubMenu_link:hover {
-  background-color: rgb(170, 192, 170);
-}
-
-.SubMenu_text {
-  color: rgb(255, 255, 255);
-  font-weight: 400;
-  padding-left: 20px;
 }

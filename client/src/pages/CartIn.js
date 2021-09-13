@@ -30,55 +30,61 @@ function CartIn({ cartList, setCartList }) {
   return (
     <div className="cartIn_container">
       <div className="cartIn">
-        <table className="cartIn_items">
+        <table className="cartIn_table">
           <thead>
-            <td>item</td>
-            <td></td>
-            <td>price</td>
-            <td>quantity</td>
-            <td>total</td>
-            <td></td>
+            <th>item</th>
+            <th>title</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>total</th>
           </thead>
-          <br />
-          {cartList.map((product) => (
+          <tbody className="cartIn_none">
+            <th>item</th>
+            <th>title</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>total</th>
+          </tbody>
+
+          {cartList.map((item) => (
             <tbody>
-              <td className="cartIn_items_img">
-                <img src={product.img} alt={product.title} />
+              <td className="cartIn_item_img">
+                <img src={item.img} alt={item.id} />
               </td>
-              <td>{product.title}</td>
-              <td>{product.price}</td>
+              <td>{item.title}</td>
+              <td>{item.price}</td>
               <td>
                 <button
-                  onClick={(e) => {
-                    plusMinusButton(e, product.id);
-                  }}
+                  className="plus-Minus-button"
+                  onClick={(e) => plusMinusButton(e, item.id)}
                 >
                   -
                 </button>
-                {product.quantity}
-                <button onClick={(e) => plusMinusButton(e, product.id)}>
+                {item.quantity}
+                <button
+                  className="plus-Minus-button"
+                  onClick={(e) => plusMinusButton(e, item.id)}
+                >
                   +
                 </button>
               </td>
-              <td>{product.total}</td>
               <td>
+                {item.total}
                 <div
-                  onClick={() => deleteProduct(product.id)}
+                  onClick={() => deleteProduct(item.id)}
                   className="cartIn_delete"
                 >
-                  x
+                  ✕
                 </div>
               </td>
             </tbody>
           ))}
         </table>
-        <div className="cartIn_total_price">
+        <div className="cartIn_total">
           <div>
-            Total: <span>{totalPrice}₩</span>
+            Total: <span>{totalPrice}</span>
           </div>
-        </div>
-        <div className="cartIn_buy_button">
-          <button>Buy Product</button>
+          <button>Buy Products</button>
         </div>
       </div>
     </div>

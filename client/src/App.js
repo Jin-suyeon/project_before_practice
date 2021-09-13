@@ -1,18 +1,24 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Chair from "./pages/Chair";
+import Desk from "./pages/Desk";
+import Shelf from "./pages/Shelf";
+import Light from "./pages/Light";
 import Main from "./pages/Main";
 import Header from "./components/Header";
 import Cart from "./pages/CartIn";
 import { useEffect, useState } from "react";
 import Loading from "./components/Loading";
-import Mypage from "./components/Mypage";
-import ChairList from "./assets/ChairList";
+import Mypage from "./pages/Mypage";
+import furnitureList from "./assets/furnitureList";
+import CartInModal from "./components/CartInModal";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [mydata, setMydata] = useState({});
   const [cartList, setCartList] = useState([]);
+  const [cartInModal, setCartInModal] = useState(false);
+  const [productTitle, setProductTitle] = useState({});
+  const [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => {
     scrollStop();
@@ -25,6 +31,13 @@ function App() {
     scrollStop();
   }, [isLoading]);
 
+  useEffect(() => {
+    setCartInModal(true);
+    setTimeout(() => {
+      setCartInModal(false);
+    }, 1000);
+  }, [productTitle]);
+
   //! 로딩중일 때는 스크롤 안되게, 로딩 끝나면 스크롤이 되게하는 함수
   const scrollStop = () => {
     if (isLoading) {
@@ -35,12 +48,33 @@ function App() {
     }
   };
 
-  const cartInbuttonClick = (id) => {
-    const choiceItem = ChairList.filter((chair) => chair.id === id)[0];
+  const cartInbuttonClick = (id, menuName) => {
+    let choiceItem;
+
+    if (menuName === "chair") {
+      choiceItem = furnitureList.chair.filter(
+        (product) => product.id === id
+      )[0];
+    }
+    if (menuName === "desk") {
+      choiceItem = furnitureList.desk.filter((product) => product.id === id)[0];
+    }
+    if (menuName === "shelf") {
+      choiceItem = furnitureList.shelf.filter(
+        (product) => product.id === id
+      )[0];
+    }
+    if (menuName === "light") {
+      choiceItem = furnitureList.light.filter(
+        (product) => product.id === id
+      )[0];
+    }
 
     const cartListInProduct = cartList.filter(
       (product) => product.id === id
     )[0];
+
+    setProductTitle(choiceItem);
 
     if (cartList.length === 0) {
       setCartList([{ ...choiceItem, quantity: 1, total: choiceItem.price }]);
@@ -61,26 +95,41 @@ function App() {
   return (
     <BrowserRouter>
       {/* {isLoading ? <Loading /> : null} */}
-      <Header cartList={cartList} setMydata={setMydata} />
+      {isLogin ? (
+        <CartInModal cartInModal={cartInModal} productTitle={productTitle} />
+      ) : null}
+      <Header cartList={cartList} isLogin={isLogin} setIsLogin={setIsLogin} />
       <Switch>
         <Route exact path="/">
           <Main />
         </Route>
 
         <Route exact path="/chair">
-          <Chair cartInbuttonClick={cartInbuttonClick} />
+          <Chair
+            furnitureList={furnitureList}
+            cartInbuttonClick={cartInbuttonClick}
+          />
         </Route>
 
         <Route exact path="/desk">
-          <Chair />
+          <Desk
+            furnitureList={furnitureList}
+            cartInbuttonClick={cartInbuttonClick}
+          />
         </Route>
 
         <Route exact path="/shelf">
-          <Chair />
+          <Shelf
+            furnitureList={furnitureList}
+            cartInbuttonClick={cartInbuttonClick}
+          />
         </Route>
 
         <Route exact path="/light">
-          <Chair />
+          <Light
+            furnitureList={furnitureList}
+            cartInbuttonClick={cartInbuttonClick}
+          />
         </Route>
 
         <Route exact path="/cart">
