@@ -68,7 +68,7 @@ function Login({
     >
       <div className="Login_in">
         <div className="Login_page">
-          <div className="Login_page_main_text">Log In</div>
+          <div className="Login_page_main_text">LOGIN</div>
           <input
             onChange={(e) => inputHandler(e, 1)}
             className={loginErr ? "Login_input" : "Login_input input_change"}
@@ -90,13 +90,13 @@ function Login({
             <span className="Login_password_forgot">Forgot Password</span>
           </div>
           <button className="Login_button" onClick={() => loginHandler()}>
-            Log In
+            LOGIN
           </button>
         </div>
         <div className="Login_sign_up">
           <div className="Login_sign_up_in">
             <span className="Login_sign_up_text">Don't have an account?</span>
-            <span className="Login_sign_up_button">Sign up</span>
+            <span className="Login_password_forgot">Sign up</span>
           </div>
         </div>
       </div>

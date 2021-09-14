@@ -1,32 +1,17 @@
-/* @font-face {
-  font-family: "YeolrinMyeongjo-Light";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinMyeongjo-Light.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-} */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-#Header {
-  position: fixed;
+.Header {
+  position: absolute;
   z-index: 100;
-  top: 0;
+  top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 70px;
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(233, 233, 233);
+  background-color: rgba(255, 255, 255, 0);
 }
 
-#Header_in {
+.Header_in {
   display: flex;
   width: 100%;
   padding: 20px 40px;
@@ -34,7 +19,7 @@
   align-items: center;
 }
 
-#Header_fst {
+.Header_fst {
   display: flex;
   align-items: center;
   height: 100%;
@@ -45,30 +30,30 @@
   text-decoration: none;
 }
 
-#Header_logo_icon {
+.Header_logo_icon {
   font-weight: 900;
-  color: rgb(135, 165, 135);
-  font-size: 20px;
+  color: var(--deep--grey--color);
+  font-size: 22px;
 }
 
 .Header_menu {
-  font-size: 15px;
+  font-size: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .Header_menu a {
-  color: var(--green--color);
+  color: var(--deep--grey--color);
   padding: 5px 15px;
   border-radius: 5px;
   margin: 0 20px;
 }
 
 .Header_menu a:hover {
-  background-color: var(--green--color);
-  color: white;
+  color: var(--green--color);
 }
 
 .Header_login_mypage {
@@ -92,18 +77,26 @@
 }
 
 .Header_login_in_page {
-  display: flex;
   align-items: center;
+  justify-content: center;
+  display: flex;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 2px;
   text-decoration: none;
-  font-size: 14px;
-  color: rgb(196, 196, 196);
-  font-weight: 600;
+  font-size: 12px;
+  color: var(--deep--grey--color);
+  font-weight: 400;
+  padding: 4px 20px;
+  border: 2px solid var(--deep--grey--color);
+}
+
+.Header_login_in_page > span {
+  margin-top: 2px;
 }
 
 .Header_login_in_page:hover {
-  color: rgb(135, 165, 135);
+  color: var(--green--color);
+  border: 2px solid var(--green--color);
 }
 
 .Header_login_in > span {
@@ -121,18 +114,18 @@
 }
 
 .Header_icon {
-  color: rgb(196, 196, 196);
+  color: var(--deep--grey--color);
 }
 
 .Header_icon:hover {
-  color: rgb(135, 165, 135);
+  color: var(--green--color);
 }
 
-#Header_cart_length {
+.Header_cart_length {
   position: absolute;
   top: 38px;
   right: 30px;
-  background: rgb(170, 192, 170);
+  background: ghostwhite;
   width: 20px;
   height: 20px;
   border-radius: 20px;
@@ -140,7 +133,7 @@
   justify-content: center;
   line-height: 20px;
   align-items: center;
-  color: white;
+  color: var(--deep--grey--color);
   margin-left: 5px;
   font-size: 12px;
 }

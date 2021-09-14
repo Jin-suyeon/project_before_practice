@@ -8,7 +8,7 @@
   right: 30px;
   background-color: white;
   transition: all 0.5s;
-  border: 2px solid var(--light--grey--color);
+  border: 2px solid var(--green--color);
   opacity: 0;
 }
 
@@ -26,6 +26,10 @@
   flex-direction: column;
   color: var(--light--grey--color);
   font-weight: 600;
+}
+
+.cart_in_modal > div:nth-child(1) {
+  margin-bottom: 5px;
 }
 
 .cart_in_modal span {

@@ -32,11 +32,11 @@ function CartIn({ cartList, setCartList }) {
       <div className="cartIn">
         <table className="cartIn_table">
           <thead>
-            <th>item</th>
-            <th>title</th>
-            <th>price</th>
-            <th>quantity</th>
-            <th>total</th>
+            <th>ITEM</th>
+            <th>TITLE</th>
+            <th>PRICE</th>
+            <th>QUANTITY</th>
+            <th>TOTAL</th>
           </thead>
           <tbody className="cartIn_none">
             <th>item</th>
@@ -82,7 +82,7 @@ function CartIn({ cartList, setCartList }) {
         </table>
         <div className="cartIn_total">
           <div>
-            Total: <span>{totalPrice}</span>
+            TOTAL: <span>{totalPrice}</span>
           </div>
           <button>Buy Products</button>
         </div>

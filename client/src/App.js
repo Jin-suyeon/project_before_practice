@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Chair from "./pages/Chair";
@@ -12,6 +13,7 @@ import Loading from "./components/Loading";
 import Mypage from "./pages/Mypage";
 import furnitureList from "./assets/furnitureList";
 import CartInModal from "./components/CartInModal";
+import Map from "./pages/Map";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -92,6 +94,28 @@ function App() {
     }
   };
 
+  //! 스크롤 이벤트
+  const isElementUnderBottom = (elem, triggerDiff) => {
+    const { top } = elem.getBoundingClientRect();
+    const { innerHeight } = window;
+    return top > innerHeight + (triggerDiff || 0);
+  };
+
+  const handleScroll = () => {
+    const elems = document.querySelectorAll(".up-on-scroll");
+    elems.forEach((elem) => {
+      if (isElementUnderBottom(elem, -20)) {
+        elem.style.opacity = "0";
+        elem.style.transform = "translateY(70px)";
+      } else {
+        elem.style.opacity = "1";
+        elem.style.transform = "translateY(0px)";
+      }
+    });
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
   return (
     <BrowserRouter>
       {/* {isLoading ? <Loading /> : null} */}
@@ -138,6 +162,10 @@ function App() {
 
         <Route exact path="/mypage">
           <Mypage />
+        </Route>
+
+        <Route exact path="/map">
+          <Map />
         </Route>
       </Switch>
     </BrowserRouter>

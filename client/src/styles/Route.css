@@ -1,17 +1,18 @@
-#Link {
+.Link {
   width: 100%;
   display: flex;
   padding: 50px 40px;
   margin-top: 100px;
+  color: (--deep--grey--color);
 }
 
-#Link_in {
+.Link_in {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, auto);
 }
 
-#Link_list {
+.Link_list {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -25,37 +26,37 @@
   background-color: white;
 }
 
-#Link_list:hover {
+.Link_list:hover {
   box-shadow: 0 5px 10px rgba(148, 148, 148, 0.342);
   position: relative;
   top: -20px;
 }
 
-#Link_img {
+.Link_img {
   width: 300px;
   height: 200px;
   object-fit: contain;
   margin-right: 20px;
 }
 
-#Link_list_explanation {
+.Link_list_explanation {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-#Link_list_title {
+.Link_list_title {
   margin-bottom: 10px;
   font-weight: 600;
 }
 
-#Link_list_price {
+.Link_list_price {
   margin-bottom: 20px;
   font-size: 13px;
   color: gray;
 }
 
-#Link_options {
+.Link_options {
   width: 100px;
   height: 25px;
   margin-bottom: 10px;
@@ -67,25 +68,25 @@
   font-weight: 500;
 }
 
-#Link_options:focus {
+.Link_options:focus {
   box-shadow: 0 0 0 2px rgb(135, 165, 135);
   outline: none;
 }
 
-#Link_list_cart {
+.Link_list_cart {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100px;
   height: 30px;
-  background-color: rgb(206, 206, 206);
+  background-color: var(--deep--grey--color);
   border: none;
-  border-radius: 15px;
+  border-radius: 3px;
   cursor: pointer;
   color: white;
   font-weight: 600;
 }
 
-#Link_list_cart:active {
+.Link_list_cart:active {
   transform: scale(0.98);
 }

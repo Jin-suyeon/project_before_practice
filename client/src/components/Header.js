@@ -32,35 +32,33 @@ function Header({ setMydata, cartList, isLogin, setIsLogin }) {
     .reduce((a, b) => a + b, 0);
 
   return (
-    <div id="Header">
-      <div id="Header_in">
-        <div id="Header_fst">
+    <div className="Header">
+      <div className="Header_in">
+        <div className="Header_fst">
           <Link className="Header_logo_link" to="/">
-            <span id="Header_logo_icon">HOMEINT</span>
+            <span className="Header_logo_icon">HOMEINT</span>
           </Link>
         </div>
 
         <div className="Header_menu">
-          <Link to="/chair">chair</Link>
-          <Link to="/desk">desk</Link>
-          <Link to="shelf">shelf</Link>
-          <Link to="light">light</Link>
+          <Link to="/chair">CHAIR</Link>
+          <Link to="/desk">DESK</Link>
+          <Link to="/shelf">SHELF</Link>
+          <Link to="/light">LIGHT</Link>
+          <Link to="/map">MAP</Link>
         </div>
 
         <div className="Header_login">
           <div className="Header_login_mypage">
             {isLogin ? (
               <Link to="/mypage" className="Header_login_in user">
-                <span>
-                  <FontAwesomeIcon
-                    className="Header_icon"
-                    icon={faUserCircle}
-                  />
-                </span>
+                <div className="Header_login_in_page">
+                  <div>MYPAGE</div>
+                </div>
               </Link>
             ) : (
               <div className="Header_login_in_page" onClick={openHandler}>
-                <span className="">Login</span>
+                <span>LOGIN</span>
               </div>
             )}
           </div>
@@ -71,7 +69,7 @@ function Header({ setMydata, cartList, isLogin, setIsLogin }) {
                   className="Header_icon cart"
                   icon={faShoppingBag}
                 />
-                <span id="Header_cart_length">{totalQuantity}</span>
+                <span className="Header_cart_length">{totalQuantity}</span>
               </Link>
             </div>
           ) : null}
