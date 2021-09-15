@@ -45,7 +45,7 @@
   position: absolute;
   font-size: 40px;
   font-weight: 600;
-  color: rgb(135, 165, 135);
+  color: var(--deep--grey--color);
 }
 
 .ldio-92qnniqtgd div:nth-child(1) {

@@ -118,7 +118,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* {isLoading ? <Loading /> : null} */}
+      {isLoading ? <Loading /> : null}
       {isLogin ? (
         <CartInModal cartInModal={cartInModal} productTitle={productTitle} />
       ) : null}

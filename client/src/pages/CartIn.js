@@ -82,7 +82,7 @@ function CartIn({ cartList, setCartList }) {
         </table>
         <div className="cartIn_total">
           <div>
-            TOTAL: <span>{totalPrice}</span>
+            TOTAL <span>{totalPrice}</span>
           </div>
           <button>Buy Products</button>
         </div>

@@ -15,7 +15,7 @@ function Shelf({ cartInbuttonClick, furnitureList }) {
                 className="Link_list_cart"
                 onClick={() => cartInbuttonClick(chair.id, "shelf")}
               >
-                Cart In
+                Cart In<span className="Link_list_cart_plus">✕</span>
               </button>
             </div>
           </div>

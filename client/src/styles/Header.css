@@ -3,7 +3,6 @@
   z-index: 100;
   top: 10px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -12,6 +11,7 @@
 }
 
 .Header_in {
+  position: relative;
   display: flex;
   width: 100%;
   padding: 20px 40px;
@@ -34,6 +34,11 @@
   font-weight: 900;
   color: var(--deep--grey--color);
   font-size: 22px;
+}
+
+.Header_menu_container {
+  /* width: 100%; */
+  display: flex;
 }
 
 .Header_menu {
@@ -86,12 +91,12 @@
   font-size: 12px;
   color: var(--deep--grey--color);
   font-weight: 400;
-  padding: 4px 20px;
+  padding: 3px 20px;
   border: 2px solid var(--deep--grey--color);
 }
 
 .Header_login_in_page > span {
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .Header_login_in_page:hover {
@@ -136,4 +141,22 @@
   color: var(--deep--grey--color);
   margin-left: 5px;
   font-size: 12px;
+}
+
+@media screen and (max-width: 920px) {
+  .Header_menu_container {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    left: 5px;
+  }
+
+  .Header_menu {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
 }

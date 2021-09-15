@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import "../styles/Header.css";
 import Login from "./Login";
@@ -5,7 +6,6 @@ import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
-import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 
 function Header({ setMydata, cartList, isLogin, setIsLogin }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,12 +40,14 @@ function Header({ setMydata, cartList, isLogin, setIsLogin }) {
           </Link>
         </div>
 
-        <div className="Header_menu">
-          <Link to="/chair">CHAIR</Link>
-          <Link to="/desk">DESK</Link>
-          <Link to="/shelf">SHELF</Link>
-          <Link to="/light">LIGHT</Link>
-          <Link to="/map">MAP</Link>
+        <div className="Header_menu_container">
+          <div className="Header_menu">
+            <Link to="/chair">CHAIR</Link>
+            <Link to="/desk">DESK</Link>
+            <Link to="/shelf">SHELF</Link>
+            <Link to="/light">LIGHT</Link>
+            <Link to="/map">MAP</Link>
+          </div>
         </div>
 
         <div className="Header_login">
@@ -53,7 +55,7 @@ function Header({ setMydata, cartList, isLogin, setIsLogin }) {
             {isLogin ? (
               <Link to="/mypage" className="Header_login_in user">
                 <div className="Header_login_in_page">
-                  <div>MYPAGE</div>
+                  <span>MYPAGE</span>
                 </div>
               </Link>
             ) : (

@@ -1,15 +1,9 @@
 import "../styles/Login.css";
 import React, { useRef, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
-function Login({
-  setIsOpen,
-  isOpen,
-  scrollStop,
-  setIsLogin,
-  setAccessToken,
-  setMydata,
-}) {
+function Login({ setIsOpen, isOpen, scrollStop, setIsLogin, setAccessToken }) {
   const backgroundEl = useRef(null);
   const [id, setId] = useState("");
   const [pwd, setPwd] = useState("");
@@ -96,7 +90,9 @@ function Login({
         <div className="Login_sign_up">
           <div className="Login_sign_up_in">
             <span className="Login_sign_up_text">Don't have an account?</span>
-            <span className="Login_password_forgot">Sign up</span>
+            <Link to="/signup" className="Login_password_forgot">
+              Sign up
+            </Link>
           </div>
         </div>
       </div>

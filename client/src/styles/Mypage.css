@@ -1,0 +1,61 @@
+.Mypage_container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Assistant", sans-serif;
+}
+
+.Mypage {
+  margin-top: 30px;
+  width: 800px;
+  height: 550px;
+  border: 2px solid var(--deep--grey--color);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Mypage_left {
+  width: 40%;
+  height: 100%;
+  background-color: var(--deep--grey--color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 30px;
+}
+
+.Mypage_left_profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Mypage_left_profile > img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+.Mypage_left_profile > div {
+  font-weight: 600;
+  margin-left: 20px;
+  letter-spacing: 1.5px;
+}
+
+.Mypage_left > button {
+  width: 80%;
+  height: 27px;
+  border-radius: 3px;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  cursor: pointer;
+  line-height: 26px;
+}

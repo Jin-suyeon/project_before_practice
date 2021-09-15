@@ -17,6 +17,12 @@ function InteriorImage() {
               <div>How can I make the interior</div>
               <div>pretty and easy?</div>
             </div>
+            <div className="InteriorImage_img_text2">
+              <div className="underline_short"></div>
+              <div>How can I make</div>
+              <div>the interior</div>
+              <div>pretty and easy?</div>
+            </div>
           </div>
           <div className="InteriorImage_img">
             <img src="/4.jpg" alt="" />
@@ -25,12 +31,24 @@ function InteriorImage() {
               <div>How can I make the interior</div>
               <div>pretty and easy?</div>
             </div>
+            <div className="InteriorImage_img_text2">
+              <div className="underline_short"></div>
+              <div>How can I make</div>
+              <div>the interior</div>
+              <div>pretty and easy?</div>
+            </div>
           </div>
           <div className="InteriorImage_img">
             <img src="/5.jpg" alt="" />
             <div className="InteriorImage_img_text">
               <div className="underline_short"></div>
               <div>How can I make the interior</div>
+              <div>pretty and easy?</div>
+            </div>
+            <div className="InteriorImage_img_text2">
+              <div className="underline_short"></div>
+              <div>How can I make</div>
+              <div>the interior</div>
               <div>pretty and easy?</div>
             </div>
           </div>

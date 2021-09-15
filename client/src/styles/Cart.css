@@ -5,8 +5,8 @@
 }
 
 .cartIn {
-  /* width: 80%; */
-  min-width: 1200px;
+  width: 80%;
+  min-width: 1000px;
 }
 
 .cartIn_none {
@@ -18,15 +18,19 @@
   width: 250px;
 }
 
-.cartIn_none th:nth-child(2) {
+/* .cartIn_none th:nth-child(2) {
   width: 350px;
-}
+} */
 
 .cartIn_none th:nth-child(3) {
   width: 120px;
 }
 
 .cartIn_none th:nth-child(4) {
+  width: 200px;
+}
+
+.cartIn_none th:nth-child(5) {
   width: 200px;
 }
 
@@ -111,7 +115,7 @@
 .cartIn_total div {
   font-size: 20px;
   font-weight: 600;
-  color: var(--green--color);
+  color: var(--deep--grey--color);
   padding-bottom: 10px;
   padding-left: 60px;
   border-bottom: 1px solid rgb(235, 235, 235);
@@ -126,10 +130,14 @@
   margin-top: 30px;
   height: 40px;
   width: 200px;
-  background-color: var(--green--color);
+  background-color: var(--deep--grey--color);
   border-radius: 20px;
   border: none;
   font-weight: 600;
   color: white;
   cursor: pointer;
+}
+
+.cartIn_total button:hover {
+  background-color: var(--green--color);
 }

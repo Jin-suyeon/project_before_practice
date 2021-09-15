@@ -34,6 +34,7 @@ app.use(cookieParser());
 app.post("/login", controllers.login);
 app.get("/accesstokenrequest", controllers.accessTokenRequest);
 app.get("/refreshtokenrequest", controllers.refreshTokenRequest);
+app.get("/logout", controllers.logout);
 
 const HTTPS_PORT = process.env.HTTPS_PORT || 4000;
 
