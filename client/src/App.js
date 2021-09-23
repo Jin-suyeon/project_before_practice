@@ -80,6 +80,14 @@ function App() {
 
     if (cartList.length === 0) {
       setCartList([{ ...choiceItem, quantity: 1, total: choiceItem.price }]);
+      localStorage.setItem(
+        "cart",
+        JSON.stringify({
+          ...choiceItem,
+          quantity: 1,
+          total: choiceItem.price,
+        })
+      );
     } else {
       if (cartListInProduct) {
         cartListInProduct.quantity++;
@@ -118,7 +126,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      {isLoading ? <Loading /> : null}
+      {/* {isLoading ? <Loading /> : null} */}
       {isLogin ? (
         <CartInModal cartInModal={cartInModal} productTitle={productTitle} />
       ) : null}

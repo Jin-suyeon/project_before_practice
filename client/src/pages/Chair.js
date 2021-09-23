@@ -1,7 +1,16 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../actions";
 import "../styles/Route.css";
 
 function Chair({ cartInbuttonClick, furnitureList }) {
+  const state = useSelector((state) => state.itemReducer);
+  const { items, cartItems } = state;
+  const dispatch = useDispatch();
+
+  const cartInbuttonClick = (itemId, name) => {
+    dispatch(addToCart(itemId, name));
+  };
   return (
     <div className="Link">
       <div className="Link_in">
